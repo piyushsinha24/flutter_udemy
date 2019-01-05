@@ -7,25 +7,28 @@ class Products extends StatelessWidget {
 
   Widget _buildProduct(BuildContext context, int index) {
     return Card(
-      child: new Column(
-        children: <Widget>[
-          Image.asset('assets/food.jpeg'),
-          Text(products[index]),
-          ButtonBar(
-            alignment: MainAxisAlignment.center,
-            children: <Widget>[
-              FlatButton(
-                child: Text('Details'),
-                onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => ProductPage(),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: new Column(
+          children: <Widget>[
+            Image.asset('assets/food.jpeg'),
+            Text(products[index]),
+            ButtonBar(
+              alignment: MainAxisAlignment.center,
+              children: <Widget>[
+                FlatButton(
+                  child: Text('Details'),
+                  onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => ProductPage(),
+                        ),
                       ),
-                    ),
-              )
-            ],
-          )
-        ],
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
