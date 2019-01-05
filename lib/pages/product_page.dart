@@ -10,7 +10,7 @@ class ProductPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: <Widget>[
-            Text('Product Details Page'),
+            Text('Product Details Page!!!'),
             RaisedButton(onPressed:()=> Navigator.pop(context),child: Text('Back'),)
           ],
         ),
