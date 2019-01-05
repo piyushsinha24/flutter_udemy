@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './product_manager.dart';
+import './pages/home.dart';
+
 
 void main() => runApp(new MyApp());
 
@@ -10,12 +11,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal
       ),
-      home: Scaffold(
-        appBar: new AppBar(
-          title: new Text('EasyList'),
-        ),
-        body: ProductManager(),
-        ),
+      home: HomePage(),
     );
   }
 }
