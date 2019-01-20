@@ -39,7 +39,7 @@ class _AuthPageState extends State<AuthPage> with SingleTickerProviderStateMixin
         fit: StackFit.expand,
         children: <Widget>[
           new Image(
-            image: new AssetImage("assets/background.jpg"),
+            image: new AssetImage("assets/bg3.jpg"),
             fit: BoxFit.cover,
           ),
           Container(

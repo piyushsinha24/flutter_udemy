@@ -40,6 +40,8 @@ flutter:
   assets:
     - assets/food.jpeg
     - assets/background.jpg
+    - assets/bg.jpg
+    - assets/bg3.jpg
     - assets/buysell.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
