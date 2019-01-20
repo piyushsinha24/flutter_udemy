@@ -42,11 +42,12 @@ class _MyAppState extends State<MyApp> {
       // debugShowMaterialGrid: true,
       theme: ThemeData(
           brightness: Brightness.light,
-          primarySwatch: Colors.deepOrange,
-          accentColor: Colors.deepPurple),
-      // home: AuthPage(),
+          primarySwatch: Colors.red,
+          accentColor: Colors.red),
+      home: AuthPage(),
       routes: {
-        '/': (BuildContext context) => ProductsPage(_products),
+        '/': (BuildContext context) => AuthPage(),
+        '/p': (BuildContext context) => ProductsPage(_products),
         '/admin': (BuildContext context) =>
             ProductsAdminPage(_addProduct, _deleteProduct),
       },
