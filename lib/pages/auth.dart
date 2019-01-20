@@ -11,29 +11,35 @@ class AuthPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Login'),
       ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            TextField(
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(labelText: 'Login ID'),
-              onChanged: (String value) {
-                loginid = value;
-              },
-            ),
-            TextField(
-              decoration: InputDecoration(labelText: 'Password'),
-              onChanged: (String value) {
-                password = value;
-              },
-            ),
-            RaisedButton(
-              child: Text('LOGIN'),
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, '/p');
-              },
-            ),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(labelText: 'Login ID'),
+                onChanged: (String value) {
+                  loginid = value;
+                },
+              ),
+              TextField(
+                decoration: InputDecoration(labelText: 'Password'),
+                onChanged: (String value) {
+                  password = value;
+                },
+              ),
+              RaisedButton(
+                child: Text('LOGIN'),
+                textColor: Colors.white,
+                color: Colors.red,
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/p');
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
