@@ -1,34 +1,31 @@
 import 'package:flutter/material.dart';
 
-import './products.dart';
-
 class AuthPage extends StatefulWidget {
   @override
   _AuthPageState createState() => new _AuthPageState();
 }
 
-class _AuthPageState extends State<AuthPage> with SingleTickerProviderStateMixin {
-
+class _AuthPageState extends State<AuthPage>
+    with SingleTickerProviderStateMixin {
   AnimationController _iconAnimationController;
   Animation<double> _iconAnimation;
 
   @override
-  void initState()
-  {
+  void initState() {
     super.initState();
-    _iconAnimationController=new AnimationController(
-        vsync:this,
-        duration: new Duration(milliseconds: 500)
+    _iconAnimationController = new AnimationController(
+        vsync: this, duration: new Duration(milliseconds: 500));
+    _iconAnimation = new CurvedAnimation(
+      parent: _iconAnimationController,
+      curve: Curves.easeOut,
     );
-    _iconAnimation=new CurvedAnimation(
-        parent: _iconAnimationController,
-        curve: Curves.easeOut,
-    );
-    _iconAnimation.addListener(()=>this.setState((){}));
+    _iconAnimation.addListener(() => this.setState(() {}));
     _iconAnimationController.forward();
   }
-  String loginid = '';
-  String password = '';
+
+  String _loginId = '';
+  String _password = '';
+  bool _acceptTerms = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,13 +40,13 @@ class _AuthPageState extends State<AuthPage> with SingleTickerProviderStateMixin
             fit: BoxFit.cover,
           ),
           Container(
-            margin: EdgeInsets.all(20.0),
+            margin: EdgeInsets.all(10.0),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   new FlutterLogo(
-                    size: _iconAnimation.value*100,
+                    size: _iconAnimation.value * 100,
                     colors: Colors.red,
                   ),
                   TextField(
@@ -59,7 +56,7 @@ class _AuthPageState extends State<AuthPage> with SingleTickerProviderStateMixin
                       icon: Icon(Icons.assignment_ind),
                     ),
                     onChanged: (String value) {
-                      loginid = value;
+                      _loginId = value;
                     },
                   ),
                   SizedBox(
@@ -72,11 +69,25 @@ class _AuthPageState extends State<AuthPage> with SingleTickerProviderStateMixin
                     ),
                     obscureText: true,
                     onChanged: (String value) {
-                      password = value;
+                      _password = value;
                     },
                   ),
+                  SwitchListTile(
+                    value: _acceptTerms,
+                    onChanged: (bool value) {
+                      setState(() {
+                        _acceptTerms = value;
+                      });
+                    },
+                    title: Text(
+                      'Accept Terms & Conditions',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                   SizedBox(
-                    height: 50.0,
+                    height: 30.0,
                   ),
                   RaisedButton(
                     child: Text('LOGIN'),
