@@ -30,6 +30,7 @@ class _AuthPageState extends State<AuthPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(Icons.verified_user),
         title: Text('Login'),
       ),
       body: Container(
@@ -48,9 +49,14 @@ class _AuthPageState extends State<AuthPage>
                 size: _iconAnimation.value * 100,
                 colors: Colors.red,
               ),
+              SizedBox(
+                height: 10.0,
+              ),
               TextField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   hintText: 'Username',
                   icon: Icon(Icons.assignment_ind),
                 ),
@@ -63,6 +69,8 @@ class _AuthPageState extends State<AuthPage>
               ),
               TextField(
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   hintText: 'Password',
                   icon: Icon(Icons.lock),
                 ),
@@ -81,7 +89,7 @@ class _AuthPageState extends State<AuthPage>
                 title: Text(
                   'Accept Terms & Conditions',
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.normal,
                   ),
                 ),
               ),
@@ -92,6 +100,7 @@ class _AuthPageState extends State<AuthPage>
                 child: Text('LOGIN'),
                 textColor: Colors.white,
                 color: Colors.red,
+                splashColor: Colors.white,
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/p');
                 },
