@@ -42,7 +42,7 @@ class Products extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.5),
-            child: Text('Kolkata, West Bengal'),
+            child:Text('Kolkata, West Bengal'),
             decoration: BoxDecoration(
               border: Border.all(color: Colors.grey),
               borderRadius: BorderRadius.circular(5.0),

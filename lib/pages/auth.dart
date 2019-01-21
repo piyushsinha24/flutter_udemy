@@ -32,76 +32,73 @@ class _AuthPageState extends State<AuthPage>
       appBar: AppBar(
         title: Text('Login'),
       ),
-      body: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          new Image(
-            image: new AssetImage("assets/bg3.jpg"),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/bg3.jpg'),
             fit: BoxFit.cover,
           ),
-          Container(
-            margin: EdgeInsets.all(10.0),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  new FlutterLogo(
-                    size: _iconAnimation.value * 100,
-                    colors: Colors.red,
-                  ),
-                  TextField(
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      hintText: 'Username',
-                      icon: Icon(Icons.assignment_ind),
-                    ),
-                    onChanged: (String value) {
-                      _loginId = value;
-                    },
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Password',
-                      icon: Icon(Icons.lock),
-                    ),
-                    obscureText: true,
-                    onChanged: (String value) {
-                      _password = value;
-                    },
-                  ),
-                  SwitchListTile(
-                    value: _acceptTerms,
-                    onChanged: (bool value) {
-                      setState(() {
-                        _acceptTerms = value;
-                      });
-                    },
-                    title: Text(
-                      'Accept Terms & Conditions',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30.0,
-                  ),
-                  RaisedButton(
-                    child: Text('LOGIN'),
-                    textColor: Colors.white,
-                    color: Colors.red,
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/p');
-                    },
-                  ),
-                ],
+        ),
+        padding: EdgeInsets.all(10.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new FlutterLogo(
+                size: _iconAnimation.value * 100,
+                colors: Colors.red,
               ),
-            ),
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  hintText: 'Username',
+                  icon: Icon(Icons.assignment_ind),
+                ),
+                onChanged: (String value) {
+                  _loginId = value;
+                },
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  icon: Icon(Icons.lock),
+                ),
+                obscureText: true,
+                onChanged: (String value) {
+                  _password = value;
+                },
+              ),
+              SwitchListTile(
+                value: _acceptTerms,
+                onChanged: (bool value) {
+                  setState(() {
+                    _acceptTerms = value;
+                  });
+                },
+                title: Text(
+                  'Accept Terms & Conditions',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 30.0,
+              ),
+              RaisedButton(
+                child: Text('LOGIN'),
+                textColor: Colors.white,
+                color: Colors.red,
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/p');
+                },
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
