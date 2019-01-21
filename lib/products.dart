@@ -28,16 +28,24 @@ class Products extends StatelessWidget {
                   width: 8.0,
                 ),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 6.0,vertical: 2.5),
+                  padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.5),
                   decoration: BoxDecoration(
                     color: Colors.yellow,
                     borderRadius: BorderRadius.circular(5.0),
                   ),
                   child: Text(
-                   'Rs.' + products[index]['price'].toString(),
+                    'Rs.' + products[index]['price'].toString(),
                   ),
                 ),
               ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.5),
+            child: Text('Kolkata, West Bengal'),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(5.0),
             ),
           ),
           ButtonBar(
