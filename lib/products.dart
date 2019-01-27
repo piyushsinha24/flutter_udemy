@@ -46,7 +46,7 @@ class Products extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Icon(Icons.location_on,color: Colors.red,),
-                Text('Kolkata, West Bengal')
+                Text('Kolkata, West Bengal'),
               ],
             ),
           ),
